@@ -10,9 +10,17 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Todo {
+model Votes {
   id        String   @id @default(uuid())
+  placeId   String
   createdAt DateTime @default(now())
-  text      String
-  completed Boolean
+  vote      Boolean
+  open      Int
+  userId    String
+}
+
+model Places {
+  id        String   @id @default(uuid())
+  name      String
+  address   String
 }
